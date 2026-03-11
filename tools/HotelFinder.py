@@ -44,8 +44,9 @@ def Hotel_finders(params: HotelInput) -> str:
 
     # 执行搜索
     try:
-        search = serpapi.search(params)
-        result = search.data
-        return result
+        result = serpapi.search(params).data
+        # 取前 8 条有效搜索结果
+        results = result.get("organic_results", [])[:8]
+        return results
     except Exception as e:
         return f"❌ 查询失败：{str(e)}"
