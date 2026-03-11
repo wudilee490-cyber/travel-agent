@@ -32,13 +32,3 @@ def city_travel_guide(city: str) -> str:
 
     except Exception as e:
         return f"查询失败：{str(e)}"
-if __name__ == "__main__":
-    # 测试：查询杭州的景点和美食
-    print(city_travel_guide.run({
-        "city": "杭州"
-    }))
-    print("\n" + "="*60 + "\n")
-    # 测试：查询成都的景点和美食
-    print(city_travel_guide.run({
-        "city": "成都"
-    }))
